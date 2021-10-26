@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<button (click)="selected(1)">1</button>
+<button (click)="selected(2)">2</button>
+<button (click)="selected(3)">3</button>
+
+<div *ngIf="user$ | async as user; else loading">Selected: {{ user.id }}</div>
+
+<ng-template #loading> <div>Loading...</div></ng-template>
